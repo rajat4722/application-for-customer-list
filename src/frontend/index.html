@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Glassmorphism login Form Tutorial in html css</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/frontend/css/style.css">
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form id="loginForm">
+        <h3>Login Here</h3>
+
+        <label for="username">Username</label>
+        <input type="text" placeholder="Email or Phone" id="username">
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password">
+
+        <button id="loginButton">Log In</button>
+    </form>
+
+    <script>
+        document.getElementById('loginButton').addEventListener('click', function (event) {
+            console.log('Login button clicked');
+            event.preventDefault(); // Prevent default form submission
+
+            // Get the username and password values
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Perform your login logic here (e.g., API request, validation)
+            authenticateUser(username, password);
+        });
+
+        function authenticateUser(username, password) {
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+            myHeaders.append("Cookie", "JSESSIONID=77983C875AAC36772D90499DB347B16E.jvm2");
+
+            var raw = JSON.stringify({
+//                 "login_id": "test@sunbasedata.com",
+//   "password": "Test@123"
+                "login_id": username,
+                "password": password
+            });
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+
+            fetch("https://qa.sunbasedata.com/sunbase/portal/api/assignment_auth.jsp", requestOptions)
+                .then(response => response.json())
+                .then(result => {
+                    // Check if the response contains an access_token
+                    if (result.access_token) {
+                        // Handle successful login (e.g., store the token, navigate to the next screen)
+                        alert('Login successful! Access Token: ' + result.access_token);
+                        // Redirect to the next screen or perform other actions
+                    } else {
+                        // Handle unsuccessful login (show an error message, etc.)
+                        alert('Invalid username or password');
+                    }
+                })
+                .catch(error => console.log('error', error));
+        }
+    </script>
+</body>
+</html>
