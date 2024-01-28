@@ -20,7 +20,7 @@ This is a simple CRUD (Create, Read, Update, Delete) application for managing cu
 
  **Clone the Repository:**
    ```bash
-   git clone https://github.com/yourusername/customer-crud.git
+   git clone https://github.com/rajat4722/application-for-customer-list.git
 
 
 **Database Setup:**
