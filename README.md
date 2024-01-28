@@ -1,70 +1,81 @@
-Customer CRUD Application
-Welcome to the Customer CRUD application! This sophisticated system allows you to seamlessly manage customer information through an intuitive user interface. The backend is powered by Spring Boot, employing robust JWT authentication, while the frontend exudes simplicity with a blend of HTML, CSS, and JS.
+# Customer CRUD Application
 
-Table of Contents
-Technologies Used
-Setup
-Running the Application
-Backend API Endpoints
-Frontend Screens
-Sync Customer List from Remote API
-Technologies Used
-Backend: Spring Boot, Java, JWT Authentication
-Frontend: HTML, CSS, JS
-Setup
-Clone the Repository:
-bash
-Copy code
-git clone https://github.com/yourusername/customer-crud.git
-Database Setup:
-Create a MySQL database.
-Update the application.properties file in the src/main/resources folder with your database configurations.
-Build and Run Backend:
-Open the project in your preferred IDE.
-Run the YourProjectApplication.java file to initiate the Spring Boot application.
-Run Frontend:
+This is a simple CRUD (Create, Read, Update, Delete) application for managing customer information. The backend is implemented using Spring Boot with JWT authentication, and the frontend is built using basic HTML, CSS, and JS.
+
+## Table of Contents
+
+- [Technologies Used](#technologies-used)
+- [Setup](#setup)
+- [Running the Application](#running-the-application)
+- [Backend API Endpoints](#backend-api-endpoints)
+- [Frontend Screens](#frontend-screens)
+- [Sync Customer List from Remote API](#sync-customer-list-from-remote-api)
+
+## Technologies Used
+
+- Backend: Spring Boot, Java, JWT Authentication
+- Frontend: HTML, CSS, JS
+
+## Setup
+
+ **Clone the Repository:**
+   ```bash
+   git clone https://github.com/yourusername/customer-crud.git
+
+
+1.Database Setup:
+Create a MySQL database and update the application.properties file in the src/main/resources folder with your database configurations.
+
+2.Build and Run Backend:
+Open the project in your favorite IDE.
+Run the YourProjectApplication.java file to start the Spring Boot application.
+
+3.Run Frontend:
 Open the frontend folder in your code editor.
 Open index.html in your browser.
-Running the Application
-Open your browser and navigate to http://localhost:8080.
-Authenticate using the provided credentials.
-Explore the comprehensive CRUD functionality and user-friendly UI.
-Backend API Endpoints
-Create a Customer:
 
+**Running the Application**
+Open your browser and go to http://localhost:8080.
+Authenticate using the provided credentials.
+Explore the CRUD functionality and UI.
+
+**Backend API Endpoints**
+
+1.Create a Customer:
 Endpoint: /api/customers
 Method: POST
-Update a Customer:
 
+2.Update a Customer:
 Endpoint: /api/customers/{id}
 Method: PUT
-Get a List of Customers:
 
+3.Get a List of Customers:
 Endpoint: /api/customers
 Method: GET
 Query Parameters: page, size, sort, search
-Get a Single Customer Based on ID:
 
+4.Get a Single Customer Based on ID:
 Endpoint: /api/customers/{id}
 Method: GET
-Delete a Customer:
 
+5.Delete a Customer:
 Endpoint: /api/customers/{id}
 Method: DELETE
-Frontend Screens
-Customer List:
 
-Navigate to / to experience an elegantly presented HTML table listing customers.
-Utilize buttons for effortless customer viewing, editing, and deletion.
-Create/Update Customer:
+**Frontend Screens**
 
-Visit /form to access a straightforward form for creating or updating customer records.
-Customer Details:
+1.Customer List:
+Navigate to / to view a basic HTML table listing customers.
+Use buttons to view, edit, and delete customers.
 
-Explore /details/{id} to gain intricate insights into a single customer.
-Sync Customer List from Remote API
+2.Create/Update Customer:
+Navigate to /form to access a simple form to create or update a customer.
+
+3.Customer Details:
+Navigate to /details/{id} to view details of a single customer.
+
+**Sync Customer List from Remote API**
 Click the "Sync" button on the Customer List screen.
-Authenticate seamlessly using the provided credentials.
-The application orchestrates an efficient call to a remote API, fetching the latest customer data.
-Existing customers are gracefully updated, while new customers are seamlessly inserted into your database.
-Feel empowered as you harness the capabilities of this cutting-edge Customer CRUD application. Your journey to efficient customer management begins here.
+Authenticate using the provided credentials.
+The application will call a remote API to fetch customer data.
+If a customer already exists, it will be updated; otherwise, a new customer will be inserted.
