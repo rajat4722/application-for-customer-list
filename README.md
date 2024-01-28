@@ -18,58 +18,62 @@ This is a simple CRUD (Create, Read, Update, Delete) application for managing cu
 
 ## Setup
 
-1. **Clone the Repository:**
+ **Clone the Repository:**
    ```bash
    git clone https://github.com/yourusername/customer-crud.git
 
-   Database Setup:
 
-**Create a MySQL database and update the application.properties file in the src/main/resources folder with your database configurations.**
-Build and Run Backend:
+1.Database Setup:
+Create a MySQL database and update the application.properties file in the src/main/resources folder with your database configurations.
 
+2.Build and Run Backend:
 Open the project in your favorite IDE.
 Run the YourProjectApplication.java file to start the Spring Boot application.
-Run Frontend:
 
+3.Run Frontend:
 Open the frontend folder in your code editor.
 Open index.html in your browser.
-Running the Application
+
+**Running the Application**
 Open your browser and go to http://localhost:8080.
 Authenticate using the provided credentials.
 Explore the CRUD functionality and UI.
-**Backend API Endpoints**
-Create a Customer:
 
+**Backend API Endpoints**
+
+1.Create a Customer:
 Endpoint: /api/customers
 Method: POST
-Update a Customer:
 
+2.Update a Customer:
 Endpoint: /api/customers/{id}
 Method: PUT
-Get a List of Customers:
 
+3.Get a List of Customers:
 Endpoint: /api/customers
 Method: GET
 Query Parameters: page, size, sort, search
-Get a Single Customer Based on ID:
 
+4.Get a Single Customer Based on ID:
 Endpoint: /api/customers/{id}
 Method: GET
-Delete a Customer:
 
+5.Delete a Customer:
 Endpoint: /api/customers/{id}
 Method: DELETE
-**Frontend Screens**
-Customer List:
 
+**Frontend Screens**
+
+1.Customer List:
 Navigate to / to view a basic HTML table listing customers.
 Use buttons to view, edit, and delete customers.
-Create/Update Customer:
 
+2.Create/Update Customer:
 Navigate to /form to access a simple form to create or update a customer.
-Customer Details:
 
+3.Customer Details:
 Navigate to /details/{id} to view details of a single customer.
+
 **Sync Customer List from Remote API**
 Click the "Sync" button on the Customer List screen.
 Authenticate using the provided credentials.
